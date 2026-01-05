@@ -19,29 +19,41 @@ L’architettura è ora modulare e organizzata in pacchetti:
 
 ```
 
-├── bot
-| └── main.py (Entry point CLI)
-├── core
-| ├── logic.py (Logica di trading)
+├── bot\
+|
+├── core\
+| ├── manager.py (Gestore bot)
+| ├── execution.py (Esecutore trade)
 | └── trader.py (Orchestratore centrale)
 ├── data_feed.py (Dati & Indicatori)
 ├── alpha_engine.py (Calcolo segnali)
 ├── risk_manager.py (Calcolo size & controlli)
 ├── performance.py (Metrica & Journaling)
-├── ml
-| ├── trainer.py
-| └── filter.py
-├── sentiment
-| └── analysis.py (Analisi News/Social)
-├── backtest
+|
+├── ml\
+| ├── trainer.py (Training pipeline)
+| ├── filter.py (Filtro segnali & Drift detecion)
+| └── features.py (Feature Engineering)
+|
+├── sentiment\
+| └── analyzer.py (Orchestratore scraper)
+| └── scarapers\
+|   ├── base.py (Rate Limiting)
+|   └── news.py (News scraper)
+|
+├── backtest\
 | └── simulation.py (Motore simulazione)
-├── utils
+|
+├── utils\
 | ├── config.py (Config & Logging)
 | └── logger.py (Gestione log)
+|
+└── data\
+| ├── journals\ (Storico trade live)
+| └── logs\ (File di log)
+|
 ├── config.yaml (Configurazione)
-└── data
-├── journals (Storico trade live)
-└── logs (File di log)
+└── main.py (Entry point CLI)
 ```
 
 ---
