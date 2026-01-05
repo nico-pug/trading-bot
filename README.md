@@ -24,11 +24,11 @@ L’architettura è ora modulare e organizzata in pacchetti:
 ├── core\
 | ├── manager.py (Gestore bot)
 | ├── execution.py (Esecutore trade)
+| ├── data_feed.py (Dati & Indicatori)
+| ├── alpha_engine.py (Calcolo segnali)
+| ├── risk_manager.py (Calcolo size & controlli)
+| ├── performance.py (Metrica & Journaling)
 | └── trader.py (Orchestratore centrale)
-├── data_feed.py (Dati & Indicatori)
-├── alpha_engine.py (Calcolo segnali)
-├── risk_manager.py (Calcolo size & controlli)
-├── performance.py (Metrica & Journaling)
 |
 ├── ml\
 | ├── trainer.py (Training pipeline)
