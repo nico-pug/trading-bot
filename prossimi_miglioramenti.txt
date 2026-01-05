@@ -1,0 +1,11 @@
+Prossimi Passi Suggeriti
+Backtesting: Testare la strategia su dati storici === FATTO ===
+Ottimizzazione parametri: Trovare threshold score ottimali === FATTO ===
+Multi-asset: Estendere a più crypto simultaneamente === FATTO ===
+Machine Learning: Usare ML per score prediction === FATTO ===
+Alert system: Telegram/Discord notifications === SALTATO ===
+Dashboard Web - Visualizza performance, trade history, grafici equity curve (Flask/Streamlit)
+Retrain Automatico - Script per ri-trainare il modello ML ogni settimana con dati freschi
+Migliori Features ML - Aggiungere funding rate, open interest, sentiment da Twitter/Reddit
+Portfolio Allocation - Dividere il capitale tra le crypto in base a Sharpe Ratio
+Report Generator - Genera PDF/Excel con riepilogo settimanale dei trade

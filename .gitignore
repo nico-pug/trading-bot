@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.env
+.env
+
+# Editor/OS specific
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Jupyter / IPython
+.ipynb_checkpoints
+
+# MLflow
+mlruns/
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Specific to this project
+backtest_results/
+ml_models/
+trade_journal_*.csv
+sentiment_analyzer/sentiment_cache.json
+optimization_results.txt
+backtest_ml_comparison.txt
+/data
+/cache
+/reports

@@ -1,0 +1,156 @@
+# ========================================
+# TRADING BOT - Configuration File
+# ========================================
+# Questo file contiene tutti i parametri configurabili del bot.
+# Modifica i valori qui invece di editare il codice Python.
+
+# === TRADING ===
+trading:
+  capital: 10000.0              # Capitale iniziale in USDT
+  risk_per_trade: 0.01          # Rischio per trade (1% = 0.01)
+  max_drawdown_limit: 0.20      # Stop trading se drawdown > 20%
+  leverage_cap: 5               # Leva massima consentita
+  
+  # Soglie di segnale
+  score_threshold_long: 3.0     # Score minimo per LONG
+
+# === SYSTEM ===
+system:
+  scan_interval: 15             # Secondi tra ogni ciclo di analisi
+
+# === CONFIGURAZIONE PER SIMBOLO ===
+  score_threshold_short: -3.0   # Score massimo per SHORT (negativo)
+  
+  # Stop Loss / Take Profit (moltiplicatori ATR)
+  sl_multiplier: 2.0
+  tp_multiplier: 3.0
+  
+  # Costi (per calcoli realistici)
+  fee_rate: 0.0004              # 0.04% Binance taker fee
+  slippage: 0.0005              # 0.05% slippage medio stimato
+
+# === CONFIGURAZIONE PER SIMBOLO ===
+# Override specifici per ogni crypto
+symbols:
+  BTC:
+    sl_multiplier: 1.5
+    tp_multiplier: 4.0
+    score_threshold_long: 3.0
+    score_threshold_short: -3.0
+  SOL:
+    sl_multiplier: 1.5
+    tp_multiplier: 4.0
+    score_threshold_long: 3.0
+    score_threshold_short: -3.0
+  # DEFAULT usato per crypto non specificate
+
+# === API ===
+api:
+  binance:
+    enable_rate_limit: true
+    rate_limit_requests: 1200   # Richieste per minuto
+    timeout: 30                 # Timeout in secondi
+    retries: 3                  # Numero di retry su errore
+    
+  # Chiavi API (meglio usare variabili ambiente)
+  # BINANCE_API_KEY e BINANCE_SECRET da env
+
+# === MACHINE LEARNING ===
+ml:
+  enabled: true
+  model_dir: "ml_models"
+  min_probability: 0.40         # Probabilità minima per aprire trade
+  threshold: 0.5                # Soglia classificazione
+  
+  # Feature engineering
+  features:
+    - rsi
+    - atr_pct
+    - bb_position
+    - vwap_distance
+    - cvd_trend
+    - volume_ratio
+    - price_momentum
+    - funding_rate
+    - ls_ratio
+    - score
+
+# === SENTIMENT ===
+sentiment:
+  enabled: true
+  cache_duration_seconds: 1800  # 30 minuti
+  
+  weights:
+    reddit: 0.4
+    news: 0.4
+    fear_greed: 0.2
+  
+  thresholds:
+    bullish: 0.15               # Score > 0.15 = bullish
+    bearish: -0.15              # Score < -0.15 = bearish
+
+# === BACKTEST ===
+backtest:
+  days: 180                     # Giorni di storico
+  timeframe: "15m"
+  initial_capital: 10000.0
+  
+  # Walk-forward validation
+  walk_forward:
+    enabled: true
+    train_ratio: 0.7            # 70% training
+    n_folds: 3
+
+# === OTTIMIZZATORE ===
+optimizer:
+  parallel_jobs: -1             # -1 = tutti i core disponibili
+  
+  # Griglia parametri
+  sl_multipliers: [1.5, 2.0, 2.5]
+  tp_multipliers: [2.0, 3.0, 4.0]
+  score_thresholds: [2.5, 3.0, 3.5]
+  
+  # Fitness function weights
+  fitness:
+    sharpe_weight: 0.4
+    drawdown_weight: 0.3
+    winrate_weight: 0.3
+
+# === MULTI-BOT ===
+multi_bot:
+  default_cryptos:
+    - BTC
+    - ETH
+    - SOL
+    - XRP
+    - DOGE
+    - BNB
+    - ADA
+    - LTC
+  
+  startup_delay: 2              # Secondi tra avvio bot
+  health_check_interval: 60     # Secondi tra health check
+  auto_restart: true            # Riavvia bot crashati
+
+# === LOGGING ===
+logging:
+  level: INFO                   # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: null                    # null = auto-genera nome con data
+  max_bytes: 10485760           # 10MB
+  backup_count: 5               # File di backup da mantenere
+  console: true                 # Mostra log in console
+  use_colors: true              # Colori in console
+
+# === PERFORMANCE TRACKING ===
+performance:
+  trade_journal_file: "trade_journal.csv"
+  save_equity_curve: true
+  
+  # Metriche da calcolare
+  metrics:
+    - sharpe_ratio
+    - sortino_ratio
+    - max_drawdown
+    - win_rate
+    - profit_factor
+    - kelly_criterion

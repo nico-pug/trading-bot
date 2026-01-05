@@ -1,0 +1,64 @@
+💰 Gestione del Rischio e Psicologia Operativa
+1) Calcolo dell'Expected Value (EV) del sistema
+2) Applicazione del Kelly Criterion (spesso in modalità Half-Kelly o Fractional)
+3) Posizionamento dimensionato (Position Sizing) tramite rischio (1-2% per trade)
+4) Gestione attiva del Maximum Drawdown (MDD)
+5) Calcolo del Rischio di Rovina (Risk of Ruin)
+6) Controllo emotivo e Distacco dal risultato (Process vs. Outcome)
+7) Tenuta e revisione del Trade Journal (Diario Operativo)
+8) Definizione precisa di un Trading Plan scritto e immutabile
+9) Analisi delle metriche di performance (Sharpe Ratio, Sortino Ratio)
+
+📊 Microstruttura del Mercato e Order Flow
+10) Identificazione e trading degli Order Blocks (OB)
+11) Riconoscimento e reazione ai Fair Value Gaps (FVG) o Imbalances
+12) Analisi della Caccia alla Liquidità (Liquidity Grabs) su massimi e minimi
+13) Utilizzo del Volume Profile (VP) per identificare aree POC e VAL/VAH
+14) Analisi del Cumulative Volume Delta (CVD) per divergenze
+15) Lettura dei Footprint Charts (bid/ask volume per candela)
+16) Individuazione dei Breaker Blocks (BB) e Mitigation Blocks (MB)
+17) Identificazione di uno Sweep Liquidity (SL) come segnale di continuazione
+18) Mappatura dei Livelli di Supporto e Resistenza istituzionali (Non retail S/R)
+19) Analisi del Market Structure Shift (MSS) per confermare l'inversione
+
+⛓️ Analisi On-Chain e Movimenti Istituzionali
+20) Monitoraggio dello Spent Output Profit Ratio (SOPR)
+21) Analisi del Net Unrealized Profit/Loss (NUPL) per la fase di ciclo
+22) Tracciamento dei Flussi di Exchange (Inflows/Outflows) massivi
+23) Studio del Coin Days Destroyed (CDD) e del LTH-SOPR
+24) Monitoraggio delle transazioni di Whale Wallets tramite alert
+25) Analisi del MVRV Z-Score per la valutazione macro
+26) Interpretazione del Stablecoin Supply Ratio (SSR)
+27) Analisi della Percentuale di Monete in Profitto/Perdita
+
+📈 Analisi dei Derivati e dei Futures
+28) Analisi dell'Open Interest (OI) e della sua variazione
+29) Monitoraggio e interpretazione del Funding Rate (e della sua polarità)
+30) Mappatura delle Liquidations Heatmaps (Livelli di Liquidazione)
+31) Calcolo e trading del Basis (Spot-Futures Premium/Discount)
+32) Confronto dei Long/Short Ratio tra diversi exchange
+33) Analisi della Skew (distorsione) delle Opzioni (Call vs Put Open Interest)
+
+🌍 Analisi Tecnica Avanzata e Macro
+34) Analisi delle Intermarket Correlation (ad esempio con DXY e S&P 500)
+35) Applicazione delle Teorie Cicliche (Time-Based Analysis)
+36) Riconoscimento degli Schemi di Accumulazione e Distribuzione di Wyckoff
+37) Utilizzo dei livelli di Fibonacci Avanzati (Golden Pocket 0.618-0.66)
+38) Determinazione della Relative Strength Comparison (RSC) tra asset
+39) Analisi del Total Value Locked (TVL) nella DeFi per l'ecosistema generale
+
+⚙️ Tecniche Istituzionali e Metriche di Alpha
+40) Analisi della Depth of Market (DOM) (profondità di mercato)
+41) Tracciamento dello Slippage e ottimizzazione dell'Execution
+42) Utilizzo di ordini avanzati come Iceberg Orders o Pegged Orders
+43) Calcolo e analisi del VWAP (Volume-Weighted Average Price)
+44) Determinazione del TWAP (Time-Weighted Average Price)
+45) Analisi delle bande di Bollinger su volume e volatilità
+46) Utilizzo di indicatori specifici per le crypto come l'Echange Net Position Change
+47) Applicazione del modello Realized Cap e del Delta Cap
+48) Analisi del SOPR Ajusted (ASOPR)
+49) Utilizzo di Gann Fans e Gann Boxes (Analisi geometrica)
+50) Ricerca di Alpha (il rendimento superiore al benchmark)
+51) Analisi del Beta (la correlazione/volatilità rispetto al mercato)
+52) Calcolo del Treynor Ratio per la performance aggiustata al rischio
+53) Misurazione del Jensen's Alpha per l'abilità gestionale
