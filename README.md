@@ -17,25 +17,32 @@ Il bot è stato progettato per essere:
 🧠 **Architettura del Sistema (Refactor v2.0)**  
 L’architettura è ora modulare e organizzata in pacchetti:
 
-`/bot`
-  ├── `main.py`         (Entry point CLI)
-  ├── `/core`           (Logica di trading)
-  │     ├── `trader.py`      (Orchestrator centrale)
-  │     ├── `data_feed.py`   (Dati & Indicatori)
-  │     ├── `alpha_engine.py`(Calcolo segnali)
-  │     ├── `execution.py`   (Gestione ordini & posizioni)
-  │     ├── `risk_manager.py`(Calcolo size & controlli)
-  │     └── `performance.py` (Metrica & Journaling)
-  ├── `/ml`             (Machine Learning)
-  │     ├── `trainer.py`
-  │     └── `filter.py`
-  ├── `/sentiment`      (Analisi News/Social)
-  ├── `/backtest`       (Motore simulazione)
-  └── `/utils`          (Config & Logging)
+```
 
-`config.yaml`           (Tutta la configurazione qui)
-`/data/journals`        (Storico trade live)
-`/logs`                 (File di log)
+├── bot
+| └── main.py (Entry point CLI)
+├── core
+| ├── logic.py (Logica di trading)
+| └── trader.py (Orchestratore centrale)
+├── data_feed.py (Dati & Indicatori)
+├── alpha_engine.py (Calcolo segnali)
+├── risk_manager.py (Calcolo size & controlli)
+├── performance.py (Metrica & Journaling)
+├── ml
+| ├── trainer.py
+| └── filter.py
+├── sentiment
+| └── analysis.py (Analisi News/Social)
+├── backtest
+| └── simulation.py (Motore simulazione)
+├── utils
+| ├── config.py (Config & Logging)
+| └── logger.py (Gestione log)
+├── config.yaml (Configurazione)
+└── data
+├── journals (Storico trade live)
+└── logs (File di log)
+```
 
 ---
 
@@ -170,7 +177,9 @@ Il bot implementa:
 🔥 **6. Multi‑Asset Launcher**  
 Permette di lanciare più bot in parallelo:
 
-`python multi_bot.py BTC ETH SOL`
+```python
+python multi_bot.py BTC ETH SOL
+```
 
 Ogni bot:
 
@@ -200,24 +209,39 @@ Dal file `prossimi_miglioramenti.txt`:
 
 ---
 
-📦 **Installazione**  
-`pip install -r requirements.txt`
+📦 **Installazione**
+
+```bash
+pip install -r requirements.txt
+```
 
 ▶️ **Esecuzione (CLI Unificata)**
 
 Il bot ora utilizza un unico punto di ingresso: `bot.main`
 
 - **Bot Live (Singolo)**
-  `python -m bot.main trade --symbol BTC/USDT`
+
+  ```python
+  python -m bot.main trade --symbol BTC/USDT
+  ```
 
 - **Multi-Bot (Tutti i simboli in config)**
-  `python -m bot.main multi`
+
+  ```python
+  python -m bot.main multi
+  ```
 
 - **Backtest**
-  `python -m bot.main backtest --symbol BTC/USDT --days 180`
+
+  ```python
+  python -m bot.main backtest --symbol BTC/USDT --days 180
+  ```
 
 - **Ottimizzazione Parametri**
-  `python -m bot.main optimize --symbol SOL/USDT`
+
+  ```python
+  python -m bot.main optimize --symbol SOL/USDT
+  ```
 
 - **Configurazione**
   Tutti i parametri sono gestiti in `config.yaml`. Non serve più modificare il codice!
